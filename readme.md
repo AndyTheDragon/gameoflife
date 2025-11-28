@@ -1,6 +1,8 @@
 # Game of Life in JavaScript
 Small exercise coded for the Algoritmer & Datastrukturer course on EK Firskovvej Datamtiker 4. semester efterår 2025.
 
+Deployed at: https://andythedragon.github.io/gameoflife/ 
+
 ## Conway’s Game of Life
 
 Du skal lave en visualisering af Conway’s Game of Life der automatisk skifter generationer og viser levende og døde celler i et grid.
