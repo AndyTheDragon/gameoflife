@@ -1,8 +1,8 @@
 import * as view from './view.js';
 import * as model from './model.js';
 
-let isPaused = false;
-let generation = 0;
+export let isPaused = false;
+export let generation = 0;
 let timerId = null;
 
 function startController() {

@@ -6,7 +6,7 @@ export let grid = new Grid(grid_rows, grid_cols);
 grid.fill(0);
 
 export function writeToCell(row, col, value) {
-    grid .set({row, col }, value);
+    grid.set( { row, col }, value);
 }
 
 export function readFromCell(row, col) {
@@ -17,7 +17,7 @@ export function updateGrid() {
     const newGrid = new Grid(grid.rows, grid.cols);
     for (let row = 0; row < grid.rows; row++) {
         for (let col = 0; col < grid.cols; col++) {
-            let numberOfNeighbours = grid.neighbourValues({ row, col }).reduce((sum, val) => sum + val);
+            let numberOfNeighbours = grid.neighbourValues({ row, col }).reduce((sum, val) => sum + val, 0);
             switch (numberOfNeighbours) {
                 case 0:
                 case 1:

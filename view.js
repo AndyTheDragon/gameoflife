@@ -19,14 +19,7 @@ export function displayGrid(model) {
         }
     }
 
-    if (controller.isPaused) {
-        document.getElementById('pauseOverlay').classList.add('visible');
-    } else {
-        document.getElementById('pauseOverlay').classList.remove('visible');
-    }
-
     document.getElementById('generationCounter').textContent = controller.generation;
-    document.getElementById('pauseReason').textContent = controller.pauseReason;
 }
 
 export function setupGridUI(rows, cols) {

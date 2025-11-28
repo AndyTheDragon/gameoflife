@@ -33,7 +33,7 @@ export default class Grid {
   }
 
   rowColFor(index) {
-    if (index < 0 || index >= this.size()) {
+    if (index < 0 || index >= this.size) {
       return undefined;
     }
     const row = Math.floor(index / this.#cols);
@@ -44,7 +44,7 @@ export default class Grid {
   get({ row, col }) {
     const index = this.indexFor({ row, col });
     if (index === undefined) {
-      return undefined;
+      return 0;
     }
     return this.#grid[index];
   }
