@@ -3,13 +3,14 @@ import * as model from './model.js';
 
 let isPaused = false;
 let generation = 0;
+let timerId = null;
 
 function startController() {
     console.log("Controller started");
-
+    
     window.model = model;
     window.view = view;
-
+    
     model.resetGrid();
     view.setupGridUI(model.grid_rows, model.grid_cols);
     //view.displayGrid(model);
@@ -22,7 +23,7 @@ function tick() {
         model.updateGrid();
         generation++;
         view.displayGrid(model);
-        setTimeout(tick, 500);
+        timerId = setTimeout(tick, 500);
     }
 }
 
@@ -31,6 +32,7 @@ function resetGame() {
     isPaused = false;
     model.resetGrid();
     view.displayGrid(model);
+    clearTimeout(timerId);
     tick();
 }
 
@@ -39,6 +41,7 @@ document.getElementById('pauseButton').addEventListener('click', () => {
     if (!isPaused) {
         tick();
     } else {
+        clearTimeout(timerId);
         view.displayGrid(model);
     }
 });
