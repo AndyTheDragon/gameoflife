@@ -1,6 +1,8 @@
 import Grid from './grid.js';
 
-export let grid = new Grid(11, 11);
+export let grid_rows = 11;
+export let grid_cols = 11;
+export let grid = new Grid(grid_rows, grid_cols);
 grid.fill(0);
 
 export function writeToCell(row, col, value) {
@@ -45,6 +47,13 @@ export function resetGrid() {
     writeToCell(6,5,1);
     //writeToCell(Math.floor(Math.random() * grid.rows), Math.floor(Math.random() * grid.cols), 1);
     //writeToCell(Math.floor(Math.random() * grid.rows), Math.floor(Math.random() * grid.cols), 1);
+}
+
+export function initGrid(rows, cols) {
+    grid_rows = rows;
+    grid_cols = cols;
+    grid = new Grid(grid_rows, grid_cols);
+    resetGrid();
 }
 
     

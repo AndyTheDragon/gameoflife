@@ -113,8 +113,14 @@
     <div id="info">
         <p><span id="generationCounter">Generation: 0</span></p>
         <button id="pauseButton">Pause (P)</button> 
-        <button id="resetButton">Reset (R)</button>
+        <button id="resetButton">Reset (R)</button><br>
+        <label for="rowsInput">Rows:</label>
+        <input type="number" id="rowsInput" value="11" min="5" max="50">
+        <label for="colsInput">Cols:</label>
+        <input type="number" id="colsInput" value="11" min="5" max="50">
+        <button id="resizeButton">Resize Grid</button>
     </div>
+
     <script src="controller.js" type="module"></script>
 </body>
 </html>
